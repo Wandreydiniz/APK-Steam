@@ -14,15 +14,19 @@
         align-items: center;
         justify-content: center;
     }
-    #video-background {
+    #video-container {
         position: fixed;
         top: 0;
         left: 0;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
         z-index: -1;
+    }
+    #video-background {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
     #btn-container {
         margin-top: 20px;
@@ -57,10 +61,12 @@
 </head>
 <body>
 
-<video id="video-background" autoplay loop muted playsinline>
-    <source src="https://firebasestorage.googleapis.com/v0/b/teste-275ea.appspot.com/o/Mini%20DAYZ%20-%20Launch%20Trailer(720P_60FPS).mp4?alt=media&token=1a1eb028-70cb-4426-b2a9-69cf5cc702c0" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+<div id="video-container">
+    <video id="video-background" autoplay loop muted playsinline>
+        <source src="https://firebasestorage.googleapis.com/v0/b/teste-275ea.appspot.com/o/Mini%20DAYZ%20-%20Launch%20Trailer(720P_60FPS).mp4?alt=media&token=1a1eb028-70cb-4426-b2a9-69cf5cc702c0" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
 
 <div id="btn-container">
     <button onclick="startLoading()">Carregar</button>
