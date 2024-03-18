@@ -152,13 +152,13 @@
 <script>
     // Dados de exemplo (pode ser substituído por uma fonte de dados real)
     const aplicativos = [
-        { name: "WhatsApp GB", description: "Descrição do WhatsApp GB.", downloads: "1B+", company: "Facebook" },
-        { name: "WhatsApp", description: "Descrição do WhatsApp.", downloads: "5B+", company: "Facebook" }
+        { name: "WhatsApp GB", description: "Descrição do WhatsApp GB.", downloads: "1B+", company: "Facebook", downloadLink: "https://download1527.mediafire.com/y5d91mtemvhgi0_q5b2Ih_1POFZSceg6YWglVnfiM3e6loQNNB-r_RxArDYcDX0_JhKrKRyuSBQMePu1Jcka8Wjanlw9v-oLkEvkXylqXeSK6oc3xGtdNegcPbqQDOSfj9vrC39RYVJfv1aSYNYEqgM2k6I-GDC3NJjdA9DvrZDA51g/5a4ti64j56ucdu3/base.apk" },
+        { name: "WhatsApp", description: "Descrição do WhatsApp.", downloads: "5B+", company: "Facebook", downloadLink: "https://download1527.mediafire.com/y5d91mtemvhgi0_q5b2Ih_1POFZSceg6YWglVnfiM3e6loQNNB-r_RxArDYcDX0_JhKrKRyuSBQMePu1Jcka8Wjanlw9v-oLkEvkXylqXeSK6oc3xGtdNegcPbqQDOSfj9vrC39RYVJfv1aSYNYEqgM2k6I-GDC3NJjdA9DvrZDA51g/5a4ti64j56ucdu3/base.apk" }
     ];
 
     const jogos = [
-        { name: "SpeedDr", description: "Descrição do SpeedDr.", downloads: "100M+", company: "SpeedDev" },
-        { name: "Extrem Survival", description: "Descrição do Extrem Survival.", downloads: "50M+", company: "Extreme Games" }
+        { name: "SpeedDr", description: "Descrição do SpeedDr.", downloads: "100M+", company: "SpeedDev", downloadLink: "#" },
+        { name: "Extrem Survival", description: "Descrição do Extrem Survival.", downloads: "50M+", company: "Extreme Games", downloadLink: "https://gbwhatsapp.downgamespc.com/br/download/gb-whatsapp-pro/latest/" }
     ];
 
     // Função para renderizar aplicativos na categoria de aplicativos
@@ -172,6 +172,7 @@
                 <img src="https://t.ctcdn.com.br/qpEUCT2UXKOK2-JrsqjvFvbd1A4=/i618809.png" alt="${app.name} Icon" style="max-width: 100px; max-height: 100px;"> <!-- Ajustado o tamanho máximo da imagem -->
                 <div class="app-title">${app.name}</div>
                 <div class="app-description">${app.description}</div>
+                <a href="${app.downloadLink}" class="app-button">Download</a> <!-- Adicionado o link de download -->
             `;
             appElement.addEventListener("click", function() {
                 openFullscreen(app.name, app.description, app.downloads, app.company);
@@ -191,6 +192,7 @@
                 <img src="https://via.placeholder.com/150" alt="${jogo.name} Icon">
                 <div class="app-title">${jogo.name}</div>
                 <div class="app-description">${jogo.description}</div>
+                <a href="${jogo.downloadLink}" class="app-button">Download</a> <!-- Adicionado o link de download -->
             `;
             jogoElement.addEventListener("click", function() {
                 openFullscreen(jogo.name, jogo.description, jogo.downloads, jogo.company);
