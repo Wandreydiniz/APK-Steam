@@ -57,6 +57,11 @@
             color: #555555;
             margin-bottom: 10px;
         }
+        .app-details {
+            font-size: 14px;
+            color: #777777;
+            margin-bottom: 10px;
+        }
         .app-button {
             background-color: #4CAF50;
             color: white;
@@ -86,6 +91,8 @@
             max-width: 80%;
             max-height: 80%;
             overflow: auto;
+            position: relative; /* Adicionado */
+            text-align: center; /* Adicionado */
         }
         .close-button {
             position: absolute;
@@ -124,6 +131,7 @@
         <button class="close-button" onclick="closeFullscreen()">X</button>
         <h2 id="fullscreen-title"></h2>
         <p id="fullscreen-description"></p>
+        <p id="fullscreen-details"></p>
         <button class="app-button" onclick="downloadApp()">Install</button>
     </div>
 </div>
@@ -131,13 +139,13 @@
 <script>
     // Dados de exemplo (pode ser substituído por uma fonte de dados real)
     const aplicativos = [
-        { name: "WhatsApp GB", description: "Description of WhatsApp GB." },
-        { name: "WhatsApp", description: "Description of WhatsApp." }
+        { name: "WhatsApp GB", description: "Description of WhatsApp GB.", downloads: "1B+", company: "Facebook" },
+        { name: "WhatsApp", description: "Description of WhatsApp.", downloads: "5B+", company: "Facebook" }
     ];
 
     const jogos = [
-        { name: "SpeedDr", description: "Description of SpeedDr." },
-        { name: "Extrem Survival", description: "Description of Extrem Survival." }
+        { name: "SpeedDr", description: "Description of SpeedDr.", downloads: "100M+", company: "SpeedDev" },
+        { name: "Extrem Survival", description: "Description of Extrem Survival.", downloads: "50M+", company: "Extreme Games" }
     ];
 
     // Função para renderizar aplicativos na categoria de aplicativos
@@ -153,7 +161,7 @@
                 <div class="app-description">${app.description}</div>
             `;
             appElement.addEventListener("click", function() {
-                openFullscreen(app.name, app.description);
+                openFullscreen(app.name, app.description, app.downloads, app.company);
             });
             container.appendChild(appElement);
         });
@@ -172,21 +180,26 @@
                 <div class="app-description">${jogo.description}</div>
             `;
             jogoElement.addEventListener("click", function() {
-                openFullscreen(jogo.name, jogo.description);
+                openFullscreen(jogo.name, jogo.description, jogo.downloads, jogo.company);
             });
             container.appendChild(jogoElement);
         });
     }
 
     // Função para abrir o modo de tela cheia com detalhes do aplicativo ou jogo
-    function openFullscreen(name, description) {
+    function openFullscreen(name, description, downloads, company) {
         const fullscreenOverlay = document.getElementById("fullscreen-overlay");
         const fullscreenContent = document.getElementById("fullscreen-content");
         const fullscreenTitle = document.getElementById("fullscreen-title");
         const fullscreenDescription = document.getElementById("fullscreen-description");
+        const fullscreenDetails = document.getElementById("fullscreen-details");
 
         fullscreenTitle.textContent = name;
         fullscreenDescription.textContent = description;
+        fullscreenDetails.innerHTML = `
+            <p><strong>Downloads:</strong> ${downloads}</p>
+            <p><strong>Company:</strong> ${company}</p>
+        `;
 
         fullscreenOverlay.style.display = "flex";
     }
@@ -209,7 +222,7 @@
         const jogosFiltrados = jogos.filter(jogo => jogo.name.toLowerCase().includes(searchTerm));
         renderizarAplicativos(aplicativosFiltrados);
         renderizarJogos(jogosFiltrados);
-    } //testr
+    }
 
     // Renderizar os aplicativos e jogos iniciais
     renderizarAplicativos(aplicativos);
