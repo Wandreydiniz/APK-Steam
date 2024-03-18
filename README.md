@@ -209,7 +209,7 @@
         const jogosFiltrados = jogos.filter(jogo => jogo.name.toLowerCase().includes(searchTerm));
         renderizarAplicativos(aplicativosFiltrados);
         renderizarJogos(jogosFiltrados);
-    }
+    } //testr
 
     // Renderizar os aplicativos e jogos iniciais
     renderizarAplicativos(aplicativos);
