@@ -76,74 +76,80 @@
 
 <div class="category">
     <div class="category-title">Aplicativos</div>
-    <div class="apps-container">
-        <div class="app">
-            <img src="https://via.placeholder.com/150" alt="App Icon">
-            <div class="app-title">Whatsapp GB</div>
-            <div class="app-description">Description of App 1.</div>
-            <button class="app-button">Install</button>
-        </div>
-        <div class="app">
-            <img src="https://via.placeholder.com/150" alt="App Icon">
-            <div class="app-title">Whatsapp</div>
-            <div class="app-description">Description of App 2.</div>
-            <button class="app-button">Install</button>
-        </div>
-        <!-- Adicione mais aplicativos aqui -->
+    <div class="apps-container" id="apps-container">
+        <!-- Aplicativos serão adicionados aqui dinamicamente -->
     </div>
 </div>
 
 <div class="category">
-    <div class="category-title">Jogos Recomendados</div>
-    <div class="apps-container">
-        <div class="app">
-            <img src="https://via.placeholder.com/150" alt="Game Icon">
-            <div class="app-title">SpeedDr</div>
-            <div class="app-description">Description of Game 1.</div>
-            <button class="app-button">Install</button>
-        </div>
-        <div class="app">
-            <img src="https://via.placeholder.com/150" alt="Game Icon">
-            <div class="app-title">Extrem Survival</div>
-            <div class="app-description">Description of Game 2.</div>
-            <button class="app-button">Install</button>
-        </div>
-        <div class="app">
-            <img src="https://via.placeholder.com/150" alt="Game Icon">
-            <div class="app-title">Free Fire</div>
-            <div class="app-description">Description of Game 3.</div>
-            <button class="app-button">Install</button>
-        </div>
-        <!-- Adicione mais jogos aqui -->
+    <div class="category-title">Jogos</div>
+    <div class="apps-container" id="games-container">
+        <!-- Jogos serão adicionados aqui dinamicamente -->
     </div>
 </div>
 
-<div class="category">
-    <div class="category-title">Jogos de Sobrevivência</div>
-    <div class="apps-container">
-        <div class="app">
-            <img src="https://via.placeholder.com/150" alt="Game Icon">
-            <div class="app-title">D.O.Z survival</div>
-            <div class="app-description">Description of Game 1.</div>
-            <button class="app-button">Install</button>
-        </div>
-        <div class="app">
-            <img src="https://via.placeholder.com/150" alt="Game Icon">
-            <div class="app-title">Extrem Survival</div>
-            <div class="app-description">Description of Game 2.</div>
-            <button class="app-button">Install</button>
-        </div>
-        <div class="app">
-            <img src="https://via.placeholder.com/150" alt="Game Icon">
-            <div class="app-title">Last Day on Earth Survival</div>
-            <div class="app-description">Description of Game 3.</div>
-            <button class="app-button">Install</button>
-        </div>
-        <!-- Adicione mais jogos aqui -->
-    </div>
-</div>
+<script>
+    // Dados de exemplo (pode ser substituído por uma fonte de dados real)
+    const aplicativos = [
+        { name: "WhatsApp GB", description: "Description of WhatsApp GB." },
+        { name: "WhatsApp", description: "Description of WhatsApp." }
+    ];
 
-<!-- Adicione mais categorias e aplicativos/jogos conforme necessário -->
+    const jogos = [
+        { name: "SpeedDr", description: "Description of SpeedDr." },
+        { name: "Extrem Survival", description: "Description of Extrem Survival." }
+    ];
+
+    // Função para renderizar aplicativos na categoria de aplicativos
+    function renderizarAplicativos(aplicativos) {
+        const container = document.getElementById("apps-container");
+        container.innerHTML = "";
+        aplicativos.forEach(app => {
+            const appElement = document.createElement("div");
+            appElement.classList.add("app");
+            appElement.innerHTML = `
+                <img src="https://via.placeholder.com/150" alt="${app.name} Icon">
+                <div class="app-title">${app.name}</div>
+                <div class="app-description">${app.description}</div>
+                <button class="app-button">Install</button>
+            `;
+            container.appendChild(appElement);
+        });
+    }
+
+    // Função para renderizar jogos na categoria de jogos
+    function renderizarJogos(jogos) {
+        const container = document.getElementById("games-container");
+        container.innerHTML = "";
+        jogos.forEach(jogo => {
+            const jogoElement = document.createElement("div");
+            jogoElement.classList.add("app");
+            jogoElement.innerHTML = `
+                <img src="https://via.placeholder.com/150" alt="${jogo.name} Icon">
+                <div class="app-title">${jogo.name}</div>
+                <div class="app-description">${jogo.description}</div>
+                <button class="app-button">Install</button>
+            `;
+            container.appendChild(jogoElement);
+        });
+    }
+
+    // Função para filtrar aplicativos e jogos com base na pesquisa
+    function pesquisar() {
+        const searchTerm = document.querySelector(".search-input").value.toLowerCase();
+        const aplicativosFiltrados = aplicativos.filter(app => app.name.toLowerCase().includes(searchTerm));
+        const jogosFiltrados = jogos.filter(jogo => jogo.name.toLowerCase().includes(searchTerm));
+        renderizarAplicativos(aplicativosFiltrados);
+        renderizarJogos(jogosFiltrados);
+    }
+
+    // Renderizar os aplicativos e jogos iniciais
+    renderizarAplicativos(aplicativos);
+    renderizarJogos(jogos);
+
+    // Adicionar evento de pesquisa à barra de pesquisa
+    document.querySelector(".search-input").addEventListener("input", pesquisar);
+</script>
 
 </body>
 </html>
