@@ -1,96 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vídeo de Fundo</title>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    #video-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        z-index: -1;
-    }
-    #video-background {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    #btn-container {
-        margin-top: 20px;
-    }
-    #progress-bar {
-        width: 80%;
-        height: 10px;
-        background-color: #f2f2f2;
-        border-radius: 5px;
-        overflow: hidden;
-        margin-top: auto;
-    }
-    #progress {
-        width: 0%;
-        height: 100%;
-        background-color: #4caf50;
-        transition: width 2s ease;
-    }
-    button {
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: #4caf50;
-        color: white;
-        border: none;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-    button:hover {
-        background-color: #45a049;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Store Simulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .search-bar {
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .category {
+            margin-bottom: 30px;
+        }
+        .category-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .apps-container {
+            display: flex;
+            overflow-x: auto;
+            padding-bottom: 10px; /* Adicionando margem inferior para a rolagem horizontal */
+        }
+        .app {
+            flex: 0 0 auto; /* Forçando a largura automática para os aplicativos */
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 20px;
+            margin-right: 10px; /* Adicionando margem direita entre os aplicativos */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .app img {
+            max-width: 100%;
+            height: auto;
+        }
+        .app-title {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .app-description {
+            color: #555555;
+            margin-bottom: 10px;
+        }
+        .app-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
 
-<div id="video-container">
-    <video id="video-background" autoplay loop muted playsinline>
-        <source src="https://firebasestorage.googleapis.com/v0/b/teste-275ea.appspot.com/o/Mini%20DAYZ%20-%20Launch%20Trailer(720P_60FPS).mp4?alt=media&token=1a1eb028-70cb-4426-b2a9-69cf5cc702c0" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+<div class="search-bar">
+    <input type="text" class="search-input" placeholder="Search for apps/games...">
 </div>
 
-<div id="btn-container">
-    <button onclick="startLoading()">Carregar</button>
+<div class="category">
+    <div class="category-title">Aplicativos</div>
+    <div class="apps-container">
+        <div class="app">
+            <img src="https://via.placeholder.com/150" alt="App Icon">
+            <div class="app-title">Whatsapp GB</div>
+            <div class="app-description">Description of App 1.</div>
+            <button class="app-button">Install</button>
+        </div>
+        <div class="app">
+            <img src="https://via.placeholder.com/150" alt="App Icon">
+            <div class="app-title">Whatsapp</div>
+            <div class="app-description">Description of App 2.</div>
+            <button class="app-button">Install</button>
+        </div>
+        <!-- Adicione mais aplicativos aqui -->
+    </div>
 </div>
 
-<div id="progress-bar">
-    <div id="progress"></div>
+<div class="category">
+    <div class="category-title">Jogos Recomendados</div>
+    <div class="apps-container">
+        <div class="app">
+            <img src="https://via.placeholder.com/150" alt="Game Icon">
+            <div class="app-title">SpeedDr</div>
+            <div class="app-description">Description of Game 1.</div>
+            <button class="app-button">Install</button>
+        </div>
+        <div class="app">
+            <img src="https://via.placeholder.com/150" alt="Game Icon">
+            <div class="app-title">Extrem Survival</div>
+            <div class="app-description">Description of Game 2.</div>
+            <button class="app-button">Install</button>
+        </div>
+        <div class="app">
+            <img src="https://via.placeholder.com/150" alt="Game Icon">
+            <div class="app-title">Free Fire</div>
+            <div class="app-description">Description of Game 3.</div>
+            <button class="app-button">Install</button>
+        </div>
+        <!-- Adicione mais jogos aqui -->
+    </div>
 </div>
 
-<script>
-    function startLoading() {
-        var progressBar = document.getElementById('progress');
-        var width = 1;
-        var interval = setInterval(function() {
-            if (width >= 100) {
-                clearInterval(interval);
-                window.open("https://tanklesscamp658.github.io/mdzplus1.2.0/", "_blank");
-            } else {
-                width++;
-                progressBar.style.width = width + '%';
-            }
-        }, 20);
-    }
-</script>
+<div class="category">
+    <div class="category-title">Jogos de Sobrevivência</div>
+    <div class="apps-container">
+        <div class="app">
+            <img src="https://via.placeholder.com/150" alt="Game Icon">
+            <div class="app-title">D.O.Z survival</div>
+            <div class="app-description">Description of Game 1.</div>
+            <button class="app-button">Install</button>
+        </div>
+        <div class="app">
+            <img src="https://via.placeholder.com/150" alt="Game Icon">
+            <div class="app-title">Extrem Survival</div>
+            <div class="app-description">Description of Game 2.</div>
+            <button class="app-button">Install</button>
+        </div>
+        <div class="app">
+            <img src="https://via.placeholder.com/150" alt="Game Icon">
+            <div class="app-title">Last Day on Earth Survival</div>
+            <div class="app-description">Description of Game 3.</div>
+            <button class="app-button">Install</button>
+        </div>
+        <!-- Adicione mais jogos aqui -->
+    </div>
+</div>
+
+<!-- Adicione mais categorias e aplicativos/jogos conforme necessário -->
 
 </body>
 </html>
