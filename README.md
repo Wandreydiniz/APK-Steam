@@ -47,6 +47,8 @@
         }
         .app img {
             max-width: 100%;
+            max-height: 100%;
+            width: auto;
             height: auto;
         }
         .app-title {
@@ -150,13 +152,13 @@
 <script>
     // Dados de exemplo (pode ser substituído por uma fonte de dados real)
     const aplicativos = [
-        { name: "WhatsApp GB", description: "Description of WhatsApp GB.", downloads: "1B+", company: "Facebook" },
-            { name: "WhatsApp", description: "Description of WhatsApp.", downloads: "5B+", company: "Facebook" }
+        { name: "WhatsApp GB", description: "Descrição do WhatsApp GB.", downloads: "1B+", company: "Facebook" },
+        { name: "WhatsApp", description: "Descrição do WhatsApp.", downloads: "5B+", company: "Facebook" }
     ];
 
     const jogos = [
-        { name: "SpeedDr", description: "Description of SpeedDr.", downloads: "100M+", company: "SpeedDev" },
-        { name: "Extrem Survival", description: "Description of Extrem Survival.", downloads: "50M+", company: "Extreme Games" }
+        { name: "SpeedDr", description: "Descrição do SpeedDr.", downloads: "100M+", company: "SpeedDev" },
+        { name: "Extrem Survival", description: "Descrição do Extrem Survival.", downloads: "50M+", company: "Extreme Games" }
     ];
 
     // Função para renderizar aplicativos na categoria de aplicativos
@@ -167,7 +169,7 @@
             const appElement = document.createElement("div");
             appElement.classList.add("app");
             appElement.innerHTML = `
-                <img src="https://via.placeholder.com/150" alt="${app.name} Icon">
+                <img src="https://t.ctcdn.com.br/qpEUCT2UXKOK2-JrsqjvFvbd1A4=/i618809.png" alt="${app.name} Icon" style="max-width: 100px; max-height: 100px;"> <!-- Ajustado o tamanho máximo da imagem -->
                 <div class="app-title">${app.name}</div>
                 <div class="app-description">${app.description}</div>
             `;
