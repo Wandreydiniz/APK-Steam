@@ -153,9 +153,12 @@
     // Dados de exemplo (pode ser substituído por uma fonte de dados real)
     const aplicativos = [
         
-        { name: "WhatsApp GB", description: "Descrição do WhatsApp GB.", downloads: "1B+", company: "Facebook", downloadLink: "https://download1527.mediafire.com/y5d91mtemvhgi0_q5b2Ih_1POFZSceg6YWglVnfiM3e6loQNNB-r_RxArDYcDX0_JhKrKRyuSBQMePu1Jcka8Wjanlw9v-oLkEvkXylqXeSK6oc3xGtdNegcPbqQDOSfj9vrC39RYVJfv1aSYNYEqgM2k6I-GDC3NJjdA9DvrZDA51g/5a4ti64j56ucdu3/base.apk", iconLink: "https://via.placeholder.com/150" },
-      
-        { name: "WhatsApp", description: "Descrição do WhatsApp.", downloads: "5B+", company: "Facebook", downloadLink: "https://download1527.mediafire.com/y5d91mtemvhgi0_q5b2Ih_1POFZSceg6YWglVnfiM3e6loQNNB-r_RxArDYcDX0_JhKrKRyuSBQMePu1Jcka8Wjanlw9v-oLkEvkXylqXeSK6oc3xGtdNegcPbqQDOSfj9vrC39RYVJfv1aSYNYEqgM2k6I-GDC3NJjdA9DvrZDA51g/5a4ti64j56ucdu3/base.apk", iconLink: "[https://via.placeholder.com/150](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNaRrLDDs_BgtsvvZcpImyKtCGpxmBLPHDOZuXqA6l3g&s)" }
+const aplicativos = [
+    { name: "WhatsApp GB", description: "Descrição do WhatsApp GB.", downloads: "1B+", company: "Facebook", downloadLink: "https://download1527.mediafire.com/y5d91mtemvhgi0_q5b2Ih_1POFZSceg6YWglVnfiM3e6loQNNB-r_RxArDYcDX0_JhKrKRyuSBQMePu1Jcka8Wjanlw9v-oLkEvkXylqXeSK6oc3xGtdNegcPbqQDOSfj9vrC39RYVJfv1aSYNYEqgM2k6I-GDC3NJjdA9DvrZDA51g/5a4ti64j56ucdu3/base.apk", iconLink: "https://via.placeholder.com/150" },
+    
+    { name: "WhatsApp", description: "Descrição do WhatsApp.", downloads: "5B+", company: "Facebook", downloadLink: "https://download1527.mediafire.com/y5d91mtemvhgi0_q5b2Ih_1POFZSceg6YWglVnfiM3e6loQNNB-r_RxArDYcDX0_JhKrKRyuSBQMePu1Jcka8Wjanlw9v-oLkEvkXylqXeSK6oc3xGtdNegcPbqQDOSfj9vrC39RYVJfv1aSYNYEqgM2k6I-GDC3NJjdA9DvrZDA51g/5a4ti64j56ucdu3/base.apk", iconLink: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNaRrLDDs_BgtsvvZcpImyKtCGpxmBLPHDOZuXqA6l3g&s" }
+];
+
 
         
     ];
