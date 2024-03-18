@@ -104,6 +104,16 @@
             color: #ffffff;
             cursor: pointer;
         }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: #007bff;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -129,6 +139,7 @@
 <div class="fullscreen-overlay" id="fullscreen-overlay">
     <div class="fullscreen-content" id="fullscreen-content">
         <button class="close-button" onclick="closeFullscreen()">X</button>
+        <button class="back-button" onclick="closeFullscreen()">Back</button>
         <h2 id="fullscreen-title"></h2>
         <p id="fullscreen-description"></p>
         <p id="fullscreen-details"></p>
@@ -140,7 +151,7 @@
     // Dados de exemplo (pode ser substituído por uma fonte de dados real)
     const aplicativos = [
         { name: "WhatsApp GB", description: "Description of WhatsApp GB.", downloads: "1B+", company: "Facebook" },
-        { name: "WhatsApp", description: "Description of WhatsApp.", downloads: "5B+", company: "Facebook" }
+            { name: "WhatsApp", description: "Description of WhatsApp.", downloads: "5B+", company: "Facebook" }
     ];
 
     const jogos = [
