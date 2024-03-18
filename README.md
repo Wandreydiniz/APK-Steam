@@ -9,23 +9,23 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     #video-background {
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
         z-index: -1;
     }
     #btn-container {
         margin-top: 20px;
-        text-align: center; /* Centraliza o botão na horizontal */
     }
     #progress-bar {
         width: 80%;
@@ -57,7 +57,10 @@
 </head>
 <body>
 
-<iframe id="video-background" src="https://www.youtube.com/embed/aq8uOeYE2Xk?autoplay=1&loop=1&controls=0&mute=1&playlist=aq8uOeYE2Xk&modestbranding=1&showinfo=0&autohide=1&disablekb=1" frameborder="0" allowfullscreen></iframe>
+<video id="video-background" autoplay loop muted playsinline>
+    <source src="https://firebasestorage.googleapis.com/v0/b/teste-275ea.appspot.com/o/Mini%20DAYZ%20-%20Launch%20Trailer(720P_60FPS).mp4?alt=media&token=1a1eb028-70cb-4426-b2a9-69cf5cc702c0" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
 <div id="btn-container">
     <button onclick="startLoading()">Carregar</button>
