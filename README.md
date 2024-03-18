@@ -43,6 +43,7 @@
             padding: 20px;
             margin-right: 10px; /* Adicionando margem direita entre os aplicativos */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer; /* Alteração para o cursor indicar interatividade */
         }
         .app img {
             max-width: 100%;
@@ -66,6 +67,36 @@
             font-size: 14px;
             text-transform: uppercase;
         }
+        .fullscreen-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .fullscreen-content {
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 20px;
+            max-width: 80%;
+            max-height: 80%;
+            overflow: auto;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #ffffff;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -85,6 +116,15 @@
     <div class="category-title">Jogos</div>
     <div class="apps-container" id="games-container">
         <!-- Jogos serão adicionados aqui dinamicamente -->
+    </div>
+</div>
+
+<div class="fullscreen-overlay" id="fullscreen-overlay">
+    <div class="fullscreen-content" id="fullscreen-content">
+        <button class="close-button" onclick="closeFullscreen()">X</button>
+        <h2 id="fullscreen-title"></h2>
+        <p id="fullscreen-description"></p>
+        <button class="app-button" onclick="downloadApp()">Install</button>
     </div>
 </div>
 
@@ -111,8 +151,10 @@
                 <img src="https://via.placeholder.com/150" alt="${app.name} Icon">
                 <div class="app-title">${app.name}</div>
                 <div class="app-description">${app.description}</div>
-                <button class="app-button">Install</button>
             `;
+            appElement.addEventListener("click", function() {
+                openFullscreen(app.name, app.description);
+            });
             container.appendChild(appElement);
         });
     }
@@ -128,10 +170,36 @@
                 <img src="https://via.placeholder.com/150" alt="${jogo.name} Icon">
                 <div class="app-title">${jogo.name}</div>
                 <div class="app-description">${jogo.description}</div>
-                <button class="app-button">Install</button>
             `;
+            jogoElement.addEventListener("click", function() {
+                openFullscreen(jogo.name, jogo.description);
+            });
             container.appendChild(jogoElement);
         });
+    }
+
+    // Função para abrir o modo de tela cheia com detalhes do aplicativo ou jogo
+    function openFullscreen(name, description) {
+        const fullscreenOverlay = document.getElementById("fullscreen-overlay");
+        const fullscreenContent = document.getElementById("fullscreen-content");
+        const fullscreenTitle = document.getElementById("fullscreen-title");
+        const fullscreenDescription = document.getElementById("fullscreen-description");
+
+        fullscreenTitle.textContent = name;
+        fullscreenDescription.textContent = description;
+
+        fullscreenOverlay.style.display = "flex";
+    }
+
+    // Função para fechar o modo de tela cheia
+    function closeFullscreen() {
+        const fullscreenOverlay = document.getElementById("fullscreen-overlay");
+        fullscreenOverlay.style.display = "none";
+    }
+
+    // Função para simular o download do aplicativo ou jogo
+    function downloadApp() {
+        alert("Download initiated.");
     }
 
     // Função para filtrar aplicativos e jogos com base na pesquisa
