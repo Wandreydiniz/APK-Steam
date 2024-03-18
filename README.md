@@ -11,7 +11,7 @@
 
 <script>
     function openLink() {
-        window.open("https://tanklesscamp658.github.io/minidayzplus/", "_blank");
+        window.open("https://tanklesscamp658.github.io/mdzplus1.2.0/", "_blank");
     }
 </script>
 
