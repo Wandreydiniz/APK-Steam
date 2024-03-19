@@ -36,42 +36,54 @@
             overflow-x: auto;
             padding-bottom: 10px; /* Adicionando margem inferior para a rolagem horizontal */
         }
-        .app {
-            flex: 0 0 auto; /* Forçando a largura automática para os aplicativos */
-            background-color: #ffffff;
-            border-radius: 5px;
-            padding: 20px;
-            margin-right: 10px; /* Adicionando margem direita entre os aplicativos */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            cursor: pointer; /* Alteração para o cursor indicar interatividade */
-            display: flex;
-            align-items: center;
-        }
-        .app img {
-            max-width: 100px;
-            max-height: 100px;
-            width: auto;
-            height: auto;
-            margin-right: 20px;
-        }
-        .app-title {
-            font-size: 16px;
-            margin: 10px 0;
-        }
-        .app-description {
-            color: #555555;
-            margin-bottom: 10px;
-        }
-        .app-button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-            font-size: 14px;
-            text-transform: uppercase;
-        }
+
+
+
+     .app {
+        flex: 0 0 auto; 
+        background-color: #ffffff;
+        border-radius: 5px;
+        padding: 20px;
+        margin-right: 10px; 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer; 
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Adicionando espaço entre os elementos */
+    }
+
+    .app img {
+        max-width: 100px;
+        max-height: 100px;
+        width: auto;
+        height: auto;
+        margin-right: 20px;
+    }
+
+    .app-title {
+        font-size: 16px;
+        margin-bottom: 5px; /* Adicionando margem inferior entre o nome do aplicativo e a quantidade de downloads */
+    }
+
+    .app-downloads {
+        color: #555555;
+        margin-bottom: 5px; /* Adicionando margem inferior entre a quantidade de downloads e o botão de download */
+    }
+
+    .app-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
+
+
+
         .fullscreen-overlay {
             position: fixed;
             top: 0;
@@ -260,25 +272,27 @@ function criarCategoriaFilmes() {
     }
 
     // Função para renderizar aplicativos ou jogos em uma categoria
-    function renderizarApps(data, container) {
-        container.innerHTML = "";
-        data.forEach(item => {
-            const appElement = document.createElement("div");
-            appElement.classList.add("app");
-            appElement.innerHTML = `
-                <img src="${item.iconLink}" alt="${item.name} Icon">
-                <div>
-                    <div class="app-title">${item.name}</div>
-                    <div class="app-description">${item.description}</div>
-                </div>
+// Função para renderizar aplicativos ou jogos em uma categoria
+function renderizarApps(data, container) {
+    container.innerHTML = "";
+    data.forEach(item => {
+        const appElement = document.createElement("div");
+        appElement.classList.add("app");
+        appElement.innerHTML = `
+            <img src="${item.iconLink}" alt="${item.name} Icon">
+            <div>
+                <div class="app-title">${item.name}</div>
+                <div class="app-downloads">${item.downloads}</div>
                 <a href="${item.downloadLink}" class="app-button">Download</a>
-            `;
-            appElement.addEventListener("click", function() {
-                openFullscreen(item);
-            });
-            container.appendChild(appElement);
+            </div>
+        `;
+        appElement.addEventListener("click", function() {
+            openFullscreen(item);
         });
-    }
+        container.appendChild(appElement);
+    });
+}
+
 
     // Função para abrir o modo de tela cheia com detalhes do aplicativo ou jogo
     function openFullscreen(item) {
