@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -201,6 +202,16 @@
             iconLink: "https://i.scdn.co/image/ab67616d0000b273c72fc87f92c0e770bcc25ce7",
             videoLink: "https://tm.ibxk.com.br/2023/11/07/07164428263318.jpg"
         },
+{ 
+    name: "Survival Legends",
+    description: "'Survival Legends' is an intense multiplayer game that pits two teams of three players against each other in a fight for survival in a post-apocalyptic world overrun by zombies. During the day, players must venture out into the dangerous and zombie-infested wastelands in search of food, weapons, and other supplies needed to stay alive. As the game progresses, supplies become scarcer and players are forced to compete against each other in brutal battles to secure resources. At night, the zombies come out in full force, and teams must band together to fend off wave after wave of undead attackers. With limited ammunition and supplies, players must use strategy and teamwork to stay alive until dawn. The game features stunning graphics and immersive sound effects that transport players to a dark and terrifying world. With intense multiplayer action and challenging gameplay, Survival Legends is a must-play for fans of survival horror games.",
+    downloads: "12K",
+    company: "SpeedDev",
+    downloadLink: "#",
+    iconLink: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsb-IVzgxj24-qBL3Q9hTARFHGCKQ3JzEvJs4dOmned0MYDzlgaiFRbyTtCLfmPM31o9w&usqp=CAU",
+    videoLink: "https://firebasestorage.googleapis.com/v0/b/uninexus-game-store.appspot.com/o/Survival%20Legends(360P).mp4?alt=media&token=6a301166-fe7f-4222-ba21-9b0935ad240a"
+}
+
         // Outros jogos
     ];
 
