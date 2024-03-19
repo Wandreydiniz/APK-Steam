@@ -44,12 +44,15 @@
             margin-right: 10px; /* Adicionando margem direita entre os aplicativos */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             cursor: pointer; /* Alteração para o cursor indicar interatividade */
+            display: flex;
+            align-items: center;
         }
         .app img {
-            max-width: 100%;
-            max-height: 100%;
+            max-width: 100px;
+            max-height: 100px;
             width: auto;
             height: auto;
+            margin-right: 20px;
         }
         .app-title {
             font-size: 16px;
@@ -116,6 +119,21 @@
             color: #007bff;
             cursor: pointer;
         }
+        .details-container {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .details-label {
+            font-weight: bold;
+        }
+        .trailer-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .trailer-video {
+            width: 100%;
+            height: 315px;
+        }
     </style>
 </head>
 <body>
@@ -143,9 +161,20 @@
         <button class="close-button" onclick="closeFullscreen()">X</button>
         <button class="back-button" onclick="closeFullscreen()">Back</button>
         <h2 id="fullscreen-title"></h2>
-        <p id="fullscreen-description"></p>
-        <p id="fullscreen-details"></p>
+        <div class="app">
+            <img src="" alt="App Icon" id="fullscreen-icon">
+            <div>
+                <p id="fullscreen-description"></p>
+                <div class="details-container">
+                    <span class="details-label">Downloads:</span> <span id="fullscreen-downloads"></span><br>
+                    <span class="details-label">Company:</span> <span id="fullscreen-company"></span>
+                </div>
+            </div>
+        </div>
         <button class="app-button" onclick="downloadApp()">Install</button>
+        <div class="trailer-container" id="trailer-container">
+            <!-- Vídeo do YouTube será adicionado aqui dinamicamente -->
+        </div>
     </div>
 </div>
 
@@ -153,13 +182,22 @@
     // Dados de exemplo (pode ser substituído por uma fonte de dados real)
     const aplicativos = [
         { name: "WhatsApp GB", description: "Descrição do WhatsApp GB.", downloads: "1B+", company: "Facebook", downloadLink: "", iconLink: "https://play-lh.googleusercontent.com/jSok_1-X-LMKajCRR8lcnM951R898YWrmDat-Qrk94slj2dTJDee5LhYzaEZjGH6je8" },
+         { name: "WhatsApp GB", description: "Descrição do WhatsApp GB.", downloads: "1B+", company: "Facebook", downloadLink: "", iconLink: "https://play-lh.googleusercontent.com/jSok_1-X-LMKajCRR8lcnM951R898YWrmDat-Qrk94slj2dTJDee5LhYzaEZjGH6je8" },
+                { name: "WhatsApp GB", description: "Descrição do WhatsApp GB.", downloads: "1B+", company: "Facebook", downloadLink: "", iconLink: "https://play-lh.googleusercontent.com/jSok_1-X-LMKajCRR8lcnM951R898YWrmDat-Qrk94slj2dTJDee5LhYzaEZjGH6je8" },
+                { name: "WhatsApp GB", description: "Descrição do WhatsApp GB.", downloads: "1B+", company: "Facebook", downloadLink: "", iconLink: "https://play-lh.googleusercontent.com/jSok_1-X-LMKajCRR8lcnM951R898YWrmDat-Qrk94slj2dTJDee5LhYzaEZjGH6je8" },
         
         { name: "WhatsApp", description: "Descrição do WhatsApp.", downloads: "5B+", company: "Facebook", downloadLink: "https://download2279.mediafire.com/aq3fjydpq5vgp2atm90tvzSKvkWvU-j6FAQn_Gdjgpkdu3EURY7fXYE0dzBaQrH9tuFHpoj-JVY-3PNXL1XGQ_ybApEleRJQhaYY65NIPV9InBwUSyZWfNX3WEEKoo1mMhT5wcIRspWKY7dSNxORYXDafcg_ojTolJX8NPyaCHjO1oWg/5a4ti64j56ucdu3/base.apk", iconLink: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBoumtAmE3rz6Sb5u2yAIqHaZMQuj2lBJiLqdPvG5NhA&s" }
     ];
 
     const jogos = [
+         { name: "SpeedDr", description: "Descrição do SpeedDr.", downloads: "100M+", company: "SpeedDev", downloadLink: "#", iconLink: "https://via.placeholder.com/150" },
+         { name: "SpeedDr", description: "Descrição do SpeedDr.", downloads: "100M+", company: "SpeedDev", downloadLink: "#", iconLink: "https://via.placeholder.com/150" },
+         { name: "SpeedDr", description: "Descrição do SpeedDr.", downloads: "100M+", company: "SpeedDev", downloadLink: "#", iconLink: "https://via.placeholder.com/150" },
+         { name: "SpeedDr", description: "Descrição do SpeedDr.", downloads: "100M+", company: "SpeedDev", downloadLink: "#", iconLink: "https://via.placeholder.com/150" },
+         { name: "SpeedDr", description: "Descrição do SpeedDr.", downloads: "100M+", company: "SpeedDev", downloadLink: "#", iconLink: "https://via.placeholder.com/150" },
         { name: "SpeedDr", description: "Descrição do SpeedDr.", downloads: "100M+", company: "SpeedDev", downloadLink: "#", iconLink: "https://via.placeholder.com/150" },
         { name: "Extrem Survival", description: "Descrição do Extrem Survival.", downloads: "50M+", company: "Extreme Games", downloadLink: "https://gbwhatsapp.downgamespc.com/br/download/gb-whatsapp-pro/latest/", iconLink: "https://via.placeholder.com/150" }
+
     ];
 
     // Função para renderizar aplicativos na categoria de aplicativos
@@ -170,13 +208,15 @@
             const appElement = document.createElement("div");
             appElement.classList.add("app");
             appElement.innerHTML = `
-                <img src="${app.iconLink}" alt="${app.name} Icon" style="max-width: 100px; max-height: 100px;"> <!-- Ajustado o tamanho máximo da imagem -->
-                <div class="app-title">${app.name}</div>
-                <div class="app-description">${app.description}</div>
+                <img src="${app.iconLink}" alt="${app.name} Icon">
+                <div>
+                    <div class="app-title">${app.name}</div>
+                    <div class="app-description">${app.description}</div>
+                </div>
                 <a href="${app.downloadLink}" class="app-button">Download</a> <!-- Adicionado o link de download -->
             `;
             appElement.addEventListener("click", function() {
-                openFullscreen(app.name, app.description, app.downloads, app.company);
+                openFullscreen(app.name, app.description, app.downloads, app.company, app.iconLink);
             });
             container.appendChild(appElement);
         });
@@ -191,31 +231,34 @@
             jogoElement.classList.add("app");
             jogoElement.innerHTML = `
                 <img src="${jogo.iconLink}" alt="${jogo.name} Icon">
-                <div class="app-title">${jogo.name}</div>
-                <div class="app-description">${jogo.description}</div>
+                <div>
+                    <div class="app-title">${jogo.name}</div>
+                    <div class="app-description">${jogo.description}</div>
+                </div>
                 <a href="${jogo.downloadLink}" class="app-button">Download</a> <!-- Adicionado o link de download -->
             `;
             jogoElement.addEventListener("click", function() {
-                openFullscreen(jogo.name, jogo.description, jogo.downloads, jogo.company);
+                openFullscreen(jogo.name, jogo.description, jogo.downloads, jogo.company, jogo.iconLink);
             });
             container.appendChild(jogoElement);
         });
     }
 
     // Função para abrir o modo de tela cheia com detalhes do aplicativo ou jogo
-    function openFullscreen(name, description, downloads, company) {
+    function openFullscreen(name, description, downloads, company, iconLink) {
         const fullscreenOverlay = document.getElementById("fullscreen-overlay");
         const fullscreenContent = document.getElementById("fullscreen-content");
         const fullscreenTitle = document.getElementById("fullscreen-title");
         const fullscreenDescription = document.getElementById("fullscreen-description");
-        const fullscreenDetails = document.getElementById("fullscreen-details");
+        const fullscreenDownloads = document.getElementById("fullscreen-downloads");
+        const fullscreenCompany = document.getElementById("fullscreen-company");
+        const fullscreenIcon = document.getElementById("fullscreen-icon");
 
         fullscreenTitle.textContent = name;
         fullscreenDescription.textContent = description;
-        fullscreenDetails.innerHTML = `
-            <p><strong>Downloads:</strong> ${downloads}</p>
-            <p><strong>Company:</strong> ${company}</p>
-        `;
+        fullscreenDownloads.textContent = downloads;
+        fullscreenCompany.textContent = company;
+        fullscreenIcon.src = iconLink;
 
         fullscreenOverlay.style.display = "flex";
     }
