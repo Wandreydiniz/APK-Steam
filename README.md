@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -60,11 +60,6 @@
         }
         .app-description {
             color: #555555;
-            margin-bottom: 10px;
-        }
-        .app-details {
-            font-size: 14px;
-            color: #777777;
             margin-bottom: 10px;
         }
         .app-button {
@@ -142,20 +137,21 @@
     <input type="text" class="search-input" placeholder="Search for apps/games...">
 </div>
 
-<div class="category">
-    <div class="category-title">Aplicativos</div>
-    <div class="apps-container" id="apps-container">
-        <!-- Aplicativos serão adicionados aqui dinamicamente -->
-    </div>
+<div class="category" id="aplicativos">
+    <!-- Categoria de Aplicativos -->
 </div>
 
-<div class="category">
-    <div class="category-title">Jogos</div>
-    <div class="apps-container" id="games-container">
-        <!-- Jogos serão adicionados aqui dinamicamente -->
-    </div>
+<div class="category" id="jogos">
+    <!-- Categoria de Jogos -->
 </div>
 
+<div class="category" id="filmes">
+    <!-- Categoria de Aplicativos de Filmes -->
+</div>
+
+<div class="category" id="Recomendados">
+    <!-- Categoria de Aplicativos de Recomendados -->
+</div>
 <div class="fullscreen-overlay" id="fullscreen-overlay">
     <div class="fullscreen-content" id="fullscreen-content">
         <button class="close-button" onclick="closeFullscreen()">X</button>
@@ -182,70 +178,107 @@
     // Dados de exemplo (pode ser substituído por uma fonte de dados real)
     const aplicativos = [
         { name: "WhatsApp GB", description: "Descrição do WhatsApp GB.", downloads: "1B+", company: "Facebook", downloadLink: "", iconLink: "https://play-lh.googleusercontent.com/jSok_1-X-LMKajCRR8lcnM951R898YWrmDat-Qrk94slj2dTJDee5LhYzaEZjGH6je8" },
-         { name: "WhatsApp GB", description: "Descrição do WhatsApp GB.", downloads: "1B+", company: "Facebook", downloadLink: "", iconLink: "https://play-lh.googleusercontent.com/jSok_1-X-LMKajCRR8lcnM951R898YWrmDat-Qrk94slj2dTJDee5LhYzaEZjGH6je8" },
-                { name: "WhatsApp GB", description: "Descrição do WhatsApp GB.", downloads: "1B+", company: "Facebook", downloadLink: "", iconLink: "https://play-lh.googleusercontent.com/jSok_1-X-LMKajCRR8lcnM951R898YWrmDat-Qrk94slj2dTJDee5LhYzaEZjGH6je8" },
-                { name: "WhatsApp GB", description: "Descrição do WhatsApp GB.", downloads: "1B+", company: "Facebook", downloadLink: "", iconLink: "https://play-lh.googleusercontent.com/jSok_1-X-LMKajCRR8lcnM951R898YWrmDat-Qrk94slj2dTJDee5LhYzaEZjGH6je8" },
         
         { name: "WhatsApp", description: "Descrição do WhatsApp.", downloads: "5B+", company: "Facebook", downloadLink: "https://download2279.mediafire.com/aq3fjydpq5vgp2atm90tvzSKvkWvU-j6FAQn_Gdjgpkdu3EURY7fXYE0dzBaQrH9tuFHpoj-JVY-3PNXL1XGQ_ybApEleRJQhaYY65NIPV9InBwUSyZWfNX3WEEKoo1mMhT5wcIRspWKY7dSNxORYXDafcg_ojTolJX8NPyaCHjO1oWg/5a4ti64j56ucdu3/base.apk", iconLink: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBoumtAmE3rz6Sb5u2yAIqHaZMQuj2lBJiLqdPvG5NhA&s" }
     ];
 
     const jogos = [
-         { name: "SpeedDr", description: "Descrição do SpeedDr.", downloads: "100M+", company: "SpeedDev", downloadLink: "#", iconLink: "https://via.placeholder.com/150" },
-         { name: "SpeedDr", description: "Descrição do SpeedDr.", downloads: "100M+", company: "SpeedDev", downloadLink: "#", iconLink: "https://via.placeholder.com/150" },
-         { name: "SpeedDr", description: "Descrição do SpeedDr.", downloads: "100M+", company: "SpeedDev", downloadLink: "#", iconLink: "https://via.placeholder.com/150" },
-         { name: "SpeedDr", description: "Descrição do SpeedDr.", downloads: "100M+", company: "SpeedDev", downloadLink: "#", iconLink: "https://via.placeholder.com/150" },
-         { name: "SpeedDr", description: "Descrição do SpeedDr.", downloads: "100M+", company: "SpeedDev", downloadLink: "#", iconLink: "https://via.placeholder.com/150" },
         { name: "SpeedDr", description: "Descrição do SpeedDr.", downloads: "100M+", company: "SpeedDev", downloadLink: "#", iconLink: "https://via.placeholder.com/150" },
         { name: "Extrem Survival", description: "Descrição do Extrem Survival.", downloads: "50M+", company: "Extreme Games", downloadLink: "https://gbwhatsapp.downgamespc.com/br/download/gb-whatsapp-pro/latest/", iconLink: "https://via.placeholder.com/150" }
-
     ];
 
-    // Função para renderizar aplicativos na categoria de aplicativos
-    function renderizarAplicativos(aplicativos) {
-        const container = document.getElementById("apps-container");
+const filmes = [
+    { name: "Filme 1", description: "Descrição do Filme 1.", downloads: "10M+", company: "Empresa A", downloadLink: "#", iconLink: "https://via.placeholder.com/150" },
+    { name: "Filme 2", description: "Descrição do Filme 2.", downloads: "5M+", company: "Empresa B", downloadLink: "#", iconLink: "https://via.placeholder.com/150" }
+]
+
+const Recomendados = [
+    { name: "Filme 1", description: "Descrição do Filme 1.", downloads: "10M+", company: "Empresa A", downloadLink: "#", iconLink: "https://via.placeholder.com/150" },
+    { name: "Filme 2", description: "Descrição do Filme 2.", downloads: "5M+", company: "Empresa B", downloadLink: "#", iconLink: "https://via.placeholder.com/150" }
+]
+
+function criarCategoriaRecomendados() {
+    const container = document.createElement("div");
+    container.classList.add("category");
+    container.id = "Recomendados";
+    
+    const titleElement = document.createElement("div");
+    titleElement.classList.add("category-title");
+    titleElement.textContent = "Recomendados";
+    container.appendChild(titleElement);
+
+    const appsContainer = document.createElement("div");
+    appsContainer.classList.add("apps-container");
+    container.appendChild(appsContainer);
+
+    document.body.appendChild(container);
+
+    renderizarApps(Recomendados, appsContainer);
+}
+
+function criarCategoriaFilmes() {
+    const container = document.createElement("div");
+    container.classList.add("category");
+    container.id = "filmes";
+    
+    const titleElement = document.createElement("div");
+    titleElement.classList.add("category-title");
+    titleElement.textContent = "Filmes";
+    container.appendChild(titleElement);
+
+    const appsContainer = document.createElement("div");
+    appsContainer.classList.add("apps-container");
+    container.appendChild(appsContainer);
+
+    document.body.appendChild(container);
+
+    renderizarApps(filmes, appsContainer);
+}
+
+
+    // Função para criar e renderizar uma categoria
+    function criarCategoria(id, title, data) {
+        const container = document.createElement("div");
+        container.classList.add("category");
+        container.id = id;
+        
+        const titleElement = document.createElement("div");
+        titleElement.classList.add("category-title");
+        titleElement.textContent = title;
+        container.appendChild(titleElement);
+
+        const appsContainer = document.createElement("div");
+        appsContainer.classList.add("apps-container");
+        container.appendChild(appsContainer);
+
+        document.body.appendChild(container);
+
+        renderizarApps(data, appsContainer);
+    }
+
+    // Função para renderizar aplicativos ou jogos em uma categoria
+    function renderizarApps(data, container) {
         container.innerHTML = "";
-        aplicativos.forEach(app => {
+        data.forEach(item => {
             const appElement = document.createElement("div");
             appElement.classList.add("app");
             appElement.innerHTML = `
-                <img src="${app.iconLink}" alt="${app.name} Icon">
+                <img src="${item.iconLink}" alt="${item.name} Icon">
                 <div>
-                    <div class="app-title">${app.name}</div>
-                    <div class="app-description">${app.description}</div>
+                    <div class="app-title">${item.name}</div>
+                    <div class="app-description">${item.description}</div>
                 </div>
-                <a href="${app.downloadLink}" class="app-button">Download</a> <!-- Adicionado o link de download -->
+                <a href="${item.downloadLink}" class="app-button">Download</a>
             `;
             appElement.addEventListener("click", function() {
-                openFullscreen(app.name, app.description, app.downloads, app.company, app.iconLink);
+                openFullscreen(item);
             });
             container.appendChild(appElement);
         });
     }
 
-    // Função para renderizar jogos na categoria de jogos
-    function renderizarJogos(jogos) {
-        const container = document.getElementById("games-container");
-        container.innerHTML = "";
-        jogos.forEach(jogo => {
-            const jogoElement = document.createElement("div");
-            jogoElement.classList.add("app");
-            jogoElement.innerHTML = `
-                <img src="${jogo.iconLink}" alt="${jogo.name} Icon">
-                <div>
-                    <div class="app-title">${jogo.name}</div>
-                    <div class="app-description">${jogo.description}</div>
-                </div>
-                <a href="${jogo.downloadLink}" class="app-button">Download</a> <!-- Adicionado o link de download -->
-            `;
-            jogoElement.addEventListener("click", function() {
-                openFullscreen(jogo.name, jogo.description, jogo.downloads, jogo.company, jogo.iconLink);
-            });
-            container.appendChild(jogoElement);
-        });
-    }
-
     // Função para abrir o modo de tela cheia com detalhes do aplicativo ou jogo
-    function openFullscreen(name, description, downloads, company, iconLink) {
+    function openFullscreen(item) {
         const fullscreenOverlay = document.getElementById("fullscreen-overlay");
         const fullscreenContent = document.getElementById("fullscreen-content");
         const fullscreenTitle = document.getElementById("fullscreen-title");
@@ -254,11 +287,11 @@
         const fullscreenCompany = document.getElementById("fullscreen-company");
         const fullscreenIcon = document.getElementById("fullscreen-icon");
 
-        fullscreenTitle.textContent = name;
-        fullscreenDescription.textContent = description;
-        fullscreenDownloads.textContent = downloads;
-        fullscreenCompany.textContent = company;
-        fullscreenIcon.src = iconLink;
+        fullscreenTitle.textContent = item.name;
+        fullscreenDescription.textContent = item.description;
+        fullscreenDownloads.textContent = item.downloads;
+        fullscreenCompany.textContent = item.company;
+        fullscreenIcon.src = item.iconLink;
 
         fullscreenOverlay.style.display = "flex";
     }
@@ -279,14 +312,16 @@
         const searchTerm = document.querySelector(".search-input").value.toLowerCase();
         const aplicativosFiltrados = aplicativos.filter(app => app.name.toLowerCase().includes(searchTerm));
         const jogosFiltrados = jogos.filter(jogo => jogo.name.toLowerCase().includes(searchTerm));
-        renderizarAplicativos(aplicativosFiltrados);
-        renderizarJogos(jogosFiltrados);
+        renderizarApps(aplicativosFiltrados, document.getElementById("apps-container"));
+        renderizarApps(jogosFiltrados, document.getElementById("games-container"));
     }
-
-    // Renderizar os aplicativos e jogos iniciais
-    renderizarAplicativos(aplicativos);
-    renderizarJogos(jogos);
-
+    //============================================RENDERIDADORES DE CATEGORIAS==========================================================
+    // Renderizar as categorias iniciais
+    criarCategoriaRecomendados()
+    criarCategoria("aplicativos", "Aplicativos", aplicativos);
+    criarCategoria("jogos", "Jogos", jogos);
+    criarCategoriaFilmes();
+    
     // Adicionar evento de pesquisa à barra de pesquisa
     document.querySelector(".search-input").addEventListener("input", pesquisar);
 </script>
