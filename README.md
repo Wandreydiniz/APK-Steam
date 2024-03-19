@@ -22,7 +22,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 16px;
-            box-sizing: border-box; 
+            box-sizing: border-box;
         }
         .category {
             margin-bottom: 30px;
@@ -190,7 +190,8 @@
 
 const Recomendados = [
     { name: "MEGA FILME - Filmes Online", description: "Licença Grátis Versão1.0", downloads: "6K", company: "Torang App", downloadLink: "#", iconLink: "https://images.sftcdn.net/images/t_app-icon-m/p/d08bcdb5-134d-4cbe-afb6-66eafe78141c/3543653762/mega-filme-filmes-online-logo" }
-     { name: "WhatsApp", description: "Descrição do WhatsApp.", downloads: "5B+", company: "Facebook", downloadLink: "https://download2279.mediafire.com/aq3fjydpq5vgp2atm90tvzSKvkWvU-j6FAQn_Gdjgpkdu3EURY7fXYE0dzBaQrH9tuFHpoj-JVY-3PNXL1XGQ_ybApEleRJQhaYY65NIPV9InBwUSyZWfNX3WEEKoo1mMhT5wcIRspWKY7dSNxORYXDafcg_ojTolJX8NPyaCHjO1oWg/5a4ti64j56ucdu3/base.apk", iconLink: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBoumtAmE3rz6Sb5u2yAIqHaZMQuj2lBJiLqdPvG5NhA&s" }
+   
+ { name: "WhatsApp", description: "Descrição do WhatsApp.", downloads: "5B+", company: "Facebook", downloadLink: "https://download2279.mediafire.com/aq3fjydpq5vgp2atm90tvzSKvkWvU-j6FAQn_Gdjgpkdu3EURY7fXYE0dzBaQrH9tuFHpoj-JVY-3PNXL1XGQ_ybApEleRJQhaYY65NIPV9InBwUSyZWfNX3WEEKoo1mMhT5wcIRspWKY7dSNxORYXDafcg_ojTolJX8NPyaCHjO1oWg/5a4ti64j56ucdu3/base.apk", iconLink: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBoumtAmE3rz6Sb5u2yAIqHaZMQuj2lBJiLqdPvG5NhA&s" }
  
     { name: "Filme 1", description: "Descrição do Filme 1.", downloads: "10M+", company: "Empresa A", downloadLink: "#", iconLink: "https://via.placeholder.com/150" },
     { name: "Filme 2", description: "Descrição do Filme 2.", downloads: "5M+", company: "Empresa B", downloadLink: "#", iconLink: "https://via.placeholder.com/150" }
