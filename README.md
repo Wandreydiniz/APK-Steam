@@ -22,7 +22,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 16px;
-            box-sizing: border-box;
+            box-sizing: border-box; 
         }
         .category {
             margin-bottom: 30px;
