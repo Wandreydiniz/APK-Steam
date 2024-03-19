@@ -183,18 +183,19 @@
     ];
 
     const jogos = [
+        { name: "Free fire", description: "Free Fire é um jogo de tiro e sobrevivência mundialmente famoso disponível no celular. Cada partida dura cerca de 10 minutos e te coloca em uma ilha para enfrentar 49 jogadores na luta pela sobrevivência. Os jogadores chegam ao mapa de avião e podem escolher quando saltar de paraquedas.", downloads: "100M+", company: "SpeedDev", downloadLink: "#", iconLink: "https://t.ctcdn.com.br/ywCdsUfbWpqLdzYMQo1gtLLhCbk=/48x27:931x524/768x432/smart/i371015.jpeg" },
         { name: "SpeedDr", description: "Descrição do SpeedDr.", downloads: "100M+", company: "SpeedDev", downloadLink: "#", iconLink: "https://via.placeholder.com/150" },
         { name: "Extrem Survival", description: "Descrição do Extrem Survival.", downloads: "50M+", company: "Extreme Games", downloadLink: "https://gbwhatsapp.downgamespc.com/br/download/gb-whatsapp-pro/latest/", iconLink: "https://via.placeholder.com/150" }
     ];
 
-const filmes = [
+const Recomendados = [
     { name: "Filme 1", description: "Descrição do Filme 1.", downloads: "10M+", company: "Empresa A", downloadLink: "#", iconLink: "https://via.placeholder.com/150" },
     { name: "Filme 2", description: "Descrição do Filme 2.", downloads: "5M+", company: "Empresa B", downloadLink: "#", iconLink: "https://via.placeholder.com/150" }
 ]
 
-const Recomendados = [
-    { name: "Filme 1", description: "Descrição do Filme 1.", downloads: "10M+", company: "Empresa A", downloadLink: "#", iconLink: "https://via.placeholder.com/150" },
-    { name: "Filme 2", description: "Descrição do Filme 2.", downloads: "5M+", company: "Empresa B", downloadLink: "#", iconLink: "https://via.placeholder.com/150" }
+const filmes = [ //filmes
+    { name: "Cine Filmes", description: "Cine Filmes", downloads: "10M+", company: "Cine Filmes", downloadLink: "#", iconLink: "https://yt3.googleusercontent.com/ytc/AIdro_lf1IEeEbw-xnJZXcRa6XGFKHIpkZBRlK24nBFH=s900-c-k-c0x00ffffff-no-rj" },
+    { name: "MEGA FILME - Filmes Online", description: "Licença Grátis Versão1.0", downloads: "6K", company: "Torang App", downloadLink: "#", iconLink: "https://images.sftcdn.net/images/t_app-icon-m/p/d08bcdb5-134d-4cbe-afb6-66eafe78141c/3543653762/mega-filme-filmes-online-logo" }
 ]
 
 function criarCategoriaRecomendados() {
