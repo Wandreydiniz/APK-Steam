@@ -199,8 +199,8 @@
             downloads: "100M+",
             company: "SpeedDev",
             downloadLink: "#",
-            iconLink: "https://t.ctcdn.com.br/ywCdsUfbWpqLdzYMQo1gtLLhCbk=/48x27:931x524/768x432/smart/i371015.jpeg",
-            videoLink: "https://youtu.be/iIPC026T4-I?si=PKEwvqHT1O2xcBh9"
+            iconLink: "https://i.scdn.co/image/ab67616d0000b273c72fc87f92c0e770bcc25ce7",
+            videoLink: "https://tm.ibxk.com.br/2023/11/07/07164428263318.jpg"
         },
         // Outros jogos
     ];
@@ -213,7 +213,7 @@
             company: "Torang App",
             downloadLink: "#",
             iconLink: "https://images.sftcdn.net/images/t_app-icon-m/p/d08bcdb5-134d-4cbe-afb6-66eafe78141c/3543653762/mega-filme-filmes-online-logo",
-            videoLink: "https://youtu.be/oq2Rz2I11l0?si=cVreH5Ce1wOOvfoh"
+            videoLink: ""
         },
         // Outros recomendados
     ];
@@ -224,9 +224,9 @@
             description: "Cine Filmes",
             downloads: "10M+",
             company: "Cine Filmes",
-            downloadLink: "#",
+            downloadLink: "",
             iconLink: "https://yt3.googleusercontent.com/ytc/AIdro_lf1IEeEbw-xnJZXcRa6XGFKHIpkZBRlK24nBFH=s900-c-k-c0x00ffffff-no-rj",
-            videoLink: "https://www.youtube.com/embed/VIDEO_ID_HERE"
+            videoLink: ""
         },
       { 
             name: "Cine FLIX",
@@ -235,9 +235,9 @@
             company: "Cine Filmes",
             downloadLink: "#",
             iconLink: "https://play-lh.googleusercontent.com/WfwkqIpdZz3ABcDVYWY0VPh1YYHGVeezWAEXoQgO-BRRXd7lgu8OwvCwHCAaZnWcFA",
-            videoLink: "https://www.youtube.com/embed/VIDEO_ID_HERE"
+            videoLink: ""
         },
-        // Outros filmes
+        
     ];
 
     // Função para criar e renderizar uma categoria
