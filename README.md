@@ -310,14 +310,20 @@ function criarCategoriaFilmes() {
         alert("Download initiated.");
     }
 
-    // Função para filtrar aplicativos e jogos com base na pesquisa
-    function pesquisar() {
-        const searchTerm = document.querySelector(".search-input").value.toLowerCase();
-        const aplicativosFiltrados = aplicativos.filter(app => app.name.toLowerCase().includes(searchTerm));
-        const jogosFiltrados = jogos.filter(jogo => jogo.name.toLowerCase().includes(searchTerm));
-        renderizarApps(aplicativosFiltrados, document.getElementById("apps-container"));
-        renderizarApps(jogosFiltrados, document.getElementById("games-container"));
-    }
+// Função para filtrar aplicativos e jogos com base na pesquisa
+function pesquisar() {
+    const searchTerm = document.querySelector(".search-input").value.toLowerCase();
+    const aplicativosFiltrados = aplicativos.filter(app => app.name.toLowerCase().includes(searchTerm));
+    const jogosFiltrados = jogos.filter(jogo => jogo.name.toLowerCase().includes(searchTerm));
+    const filmesFiltrados = filmes.filter(filme => filme.name.toLowerCase().includes(searchTerm));
+    const recomendadosFiltrados = Recomendados.filter(recomendado => recomendado.name.toLowerCase().includes(searchTerm));
+
+    renderizarApps(aplicativosFiltrados, document.getElementById("aplicativos")); // Correção aqui
+    renderizarApps(jogosFiltrados, document.getElementById("jogos")); // Correção aqui
+    renderizarApps(filmesFiltrados, document.getElementById("filmes")); // Correção aqui
+    renderizarApps(recomendadosFiltrados, document.getElementById("Recomendados")); // Correção aqui
+}
+
     //============================================RENDERIDADORES DE CATEGORIAS==========================================================
     // Renderizar as categorias iniciais
     criarCategoriaRecomendados()
