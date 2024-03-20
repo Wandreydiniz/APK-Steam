@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -129,23 +130,37 @@
             width: 100%;
             height: 315px;
         }
+       .config-button {
+        background-color: #4CAF50; /* Cor de fundo VERDE */
+        color: #fff; /* Cor do texto branco */
+        padding: 10px 20px; /* Espaçamento interno */
+        border: none; /* Sem borda */
+        border-radius: 3px; /* Borda arredondada */
+        cursor: pointer; /* Cursor de apontar */
+        font-size: 14px; /* Tamanho da fonte */
+        text-transform: uppercase; /* Texto em maiúsculas */
+        margin-right: 10px; /* Margem à direita para separação do campo de pesquisa */
+        }
         .download-progress-container {
             width: 100%;
             height: 10px;
             background-color: #ddd;
             margin-top: 10px;
         }
+
         .download-progress-bar {
             height: 100%;
             background-color: #4CAF50;
             width: 0;
             transition: width 0.5s ease;
         }
+
     </style>
 </head>
 <body>
 
 <div class="search-bar">
+    <button class="config-button">Configuração</button>
     <input type="text" class="search-input" placeholder="Search for apps/games...">
 </div>
 
@@ -164,6 +179,9 @@
 <div class="category" id="Recomendados">
     <!-- Categoria de Aplicativos de Recomendados -->
 </div>
+
+
+
 <div class="fullscreen-overlay" id="fullscreen-overlay">
     <div class="fullscreen-content" id="fullscreen-content">
         <button class="close-button" onclick="closeFullscreen()">X</button>
@@ -352,7 +370,8 @@
         fullscreenOverlay.style.display = "none";
     }
 
-// Função para simular o download do aplicativo ou jogo
+    // Função para simular o download do aplicativo ou jogo
+ // Função para simular o download do aplicativo ou jogo
 function downloadApp(downloadLink) {
     const progressBar = document.getElementById("download-progress-bar");
 
@@ -365,7 +384,7 @@ function downloadApp(downloadLink) {
             progressBar.style.width = "100%";
             setTimeout(() => {
                 // Simula o redirecionamento para o link de download real
-                window.open(downloadLink, "_self");
+                window.location.href = downloadLink;
             }, 500);
         } else {
             progressBar.style.width = `${progress}%`;
@@ -373,7 +392,6 @@ function downloadApp(downloadLink) {
         }
     }, 500);
 }
-
 
 
     // Função para filtrar aplicativos e jogos com base na pesquisa
