@@ -130,6 +130,18 @@
             width: 100%;
             height: 315px;
         }
+        .download-progress-container {
+            width: 100%;
+            height: 10px;
+            background-color: #ddd;
+            margin-top: 10px;
+        }
+        .download-progress-bar {
+            height: 100%;
+            background-color: #4CAF50;
+            width: 0;
+            transition: width 0.5s ease;
+        }
     </style>
 </head>
 <body>
@@ -171,6 +183,9 @@
         <button class="app-button" onclick="downloadApp()">Install</button>
         <div class="trailer-container" id="trailer-container">
             <iframe class="trailer-video" id="trailer-video" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="download-progress-container">
+            <div class="download-progress-bar" id="download-progress-bar"></div>
         </div>
     </div>
 </div>
@@ -290,7 +305,7 @@
                 <div>
                     <div class="app-title">${item.name}</div>
                     <div class="app-downloads">${item.downloads}</div>
-                    <a href="${item.downloadLink}" class="app-button">Download</a>
+                    <button class="app-button" onclick="downloadApp('${item.downloadLink}')">Download</button>
                 </div>
             `;
             appElement.addEventListener("click", function() {
@@ -300,7 +315,7 @@
         });
     }
 
-    // Função para abrir o modo de tela cheia com detalhes do aplicativo ou jogo
+    // Função para abrir o modo de tela cheia
     function openFullscreen(item) {
         const fullscreenOverlay = document.getElementById("fullscreen-overlay");
         const fullscreenContent = document.getElementById("fullscreen-content");
@@ -338,18 +353,29 @@
         fullscreenOverlay.style.display = "none";
     }
 
-    // Função para simular o download do aplicativo ou jogo
-    function downloadApp() {
-        const fullscreenContent = document.getElementById("fullscreen-content");
-        const downloadLink = fullscreenContent.dataset.downloadLink;
-    
-        if (downloadLink) {
-            // Simula o download (pode ser substituído por lógica real de download)
-            window.location.href = downloadLink;
+// Função para simular o download do aplicativo ou jogo
+function downloadApp(downloadLink) {
+    const progressBar = document.getElementById("download-progress-bar");
+
+    // Inicia a simulação do download
+    let progress = 0;
+    const interval = setInterval(() => {
+        progress += Math.random() * 10;
+        if (progress >= 100) {
+            clearInterval(interval);
+            progressBar.style.width = "100%";
+            setTimeout(() => {
+                // Simula o redirecionamento para o link de download real
+                window.open(downloadLink, "_self");
+            }, 500);
         } else {
-            alert("Download link not available.");
+            progressBar.style.width = `${progress}%`;
+            document.getElementById("fullscreen-downloads").textContent = `${Math.round(progress)}%`; // Atualiza o texto de porcentagem
         }
-    }
+    }, 500);
+}
+
+
 
     // Função para filtrar aplicativos e jogos com base na pesquisa
     function pesquisar() {
@@ -365,7 +391,6 @@
         renderizarApps(recomendadosFiltrados, document.getElementById("Recomendados")); // Correção aqui
     }
 
-
     criarCategoria("Recomendados", "Recomendados", Recomendados);
     // Renderizar as categorias iniciais
     criarCategoria("aplicativos", "Aplicativos", aplicativos);
@@ -379,3 +404,4 @@
 
 </body>
 </html>
+
