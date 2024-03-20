@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -180,11 +181,11 @@
     // Dados de exemplo (pode ser substituído por uma fonte de dados real)
     const aplicativos = [
         { 
-            name: "WhatsApp GB",
+            name: "WhatsApp",
             description: "Descrição do WhatsApp GB.",
             downloads: "1B+",
             company: "Facebook",
-            downloadLink: "",
+            downloadLink: "https://d.apkpure.net/b/APK/com.whatsapp?version=latest",
             iconLink: "https://play-lh.googleusercontent.com/jSok_1-X-LMKajCRR8lcnM951R898YWrmDat-Qrk94slj2dTJDee5LhYzaEZjGH6je8",
             videoLink: "https://youtu.be/Fwk7bPOUHM4?si=f6McD_I7GBLmxZLM"
         },
@@ -196,21 +197,30 @@
             name: "Free fire",
             description: "Free Fire é um jogo de tiro e sobrevivência mundialmente famoso disponível no celular.",
             downloads: "100M+",
-            company: "SpeedDev",
-            downloadLink: "#",
+            company: "Garena",
+            downloadLink: "https://d.apkpure.net/b/XAPK/com.dts.freefireth?version=latest",
             iconLink: "https://i.scdn.co/image/ab67616d0000b273c72fc87f92c0e770bcc25ce7",
             videoLink: "https://tm.ibxk.com.br/2023/11/07/07164428263318.jpg"
         },
-{ 
-    name: "Survival Legends",
-    description: "'Survival Legends' is an intense multiplayer game that pits two teams of three players against each other in a fight for survival in a post-apocalyptic world overrun by zombies. During the day, players must venture out into the dangerous and zombie-infested wastelands in search of food, weapons, and other supplies needed to stay alive. As the game progresses, supplies become scarcer and players are forced to compete against each other in brutal battles to secure resources. At night, the zombies come out in full force, and teams must band together to fend off wave after wave of undead attackers. With limited ammunition and supplies, players must use strategy and teamwork to stay alive until dawn. The game features stunning graphics and immersive sound effects that transport players to a dark and terrifying world. With intense multiplayer action and challenging gameplay, Survival Legends is a must-play for fans of survival horror games.",
-    downloads: "12K",
-    company: "SpeedDev",
-    downloadLink: "#",
-    iconLink: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsb-IVzgxj24-qBL3Q9hTARFHGCKQ3JzEvJs4dOmned0MYDzlgaiFRbyTtCLfmPM31o9w&usqp=CAU",
-    videoLink: "https://firebasestorage.googleapis.com/v0/b/uninexus-game-store.appspot.com/o/Survival%20Legends(360P).mp4?alt=media&token=6a301166-fe7f-4222-ba21-9b0935ad240a"
-}
+    { 
+        name: "Survival Legends",
+        description: "'Survival Legends' is an intense multiplayer game that pits two teams of three players against each other in a fight for survival in a post-apocalyptic world overrun by zombies. During the day, players must venture out into the dangerous and zombie-infested wastelands in search of food, weapons, and other supplies needed to stay alive.",
+        downloads: "12K",
+        company: "FreakGames",
+        downloadLink: "https://d.apkpure.net/b/APK/com.FreakGames.ZombieLegends?version=latest",
+        iconLink: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsb-IVzgxj24-qBL3Q9hTARFHGCKQ3JzEvJs4dOmned0MYDzlgaiFRbyTtCLfmPM31o9w&usqp=CAU",
+        videoLink: "https://firebasestorage.googleapis.com/v0/b/uninexus-game-store.appspot.com/o/Survival%20Legends(360P).mp4?alt=media&token=6a301166-fe7f-4222-ba21-9b0935ad240a"
+    },
 
+    { 
+        name: "Minecraft Original",
+        description: "'Survival Legends' is an intense multiplayer game that pits two teams of three players against each other in a fight for survival in a post-apocalyptic world overrun by zombies. During the day, players must venture out into the dangerous and zombie-infested wastelands in search of food, weapons, and other supplies needed to stay alive.",
+        downloads: "12K",
+        company: "Mojang",
+        downloadLink: "https://d.apkpure.net/b/APK/com.minecraftpe.minecraft.original.free?version=latest",
+        iconLink: "https://image.winudf.com/v2/user/admin/YWRtaW5fQmVGdW5reS1jb2xsYWdlLmpwZ18xNjY1OTc2NjY4NDAz/icon.webp?w=106&fakeurl=1&type=.webp",
+        videoLink: ""
+    }
         // Outros jogos
     ];
 
@@ -220,7 +230,7 @@
             description: "Licença Grátis Versão1.0",
             downloads: "6K",
             company: "Torang App",
-            downloadLink: "#",
+            downloadLink: "https://d.apkpure.net/b/APK/me.filmeshd.mega?version=latest",
             iconLink: "https://images.sftcdn.net/images/t_app-icon-m/p/d08bcdb5-134d-4cbe-afb6-66eafe78141c/3543653762/mega-filme-filmes-online-logo",
             videoLink: ""
         },
@@ -233,18 +243,18 @@
             description: "Cine Filmes",
             downloads: "10M+",
             company: "Cine Filmes",
-            downloadLink: "",
-            iconLink: "https://yt3.googleusercontent.com/ytc/AIdro_lf1IEeEbw-xnJZXcRa6XGFKHIpkZBRlK24nBFH=s900-c-k-c0x00ffffff-no-rj",
+            downloadLink: "https://d.apkpure.net/b/APK/com.filme.cine?version=latest",
+            iconLink: "https://image.winudf.com/v2/image/Y29tLmZpbG1lLmNpbmVfaWNvbl8xNTM0OTgyNzk1XzA2Mg/icon.webp?w=140&fakeurl=1&type=.webp",
             videoLink: ""
         },
       { 
-            name: "Cine FLIX",
+            name: "Cine Flix Play V2 ",
             description: "Cine Filmes",
             downloads: "10M+",
             company: "Cine Filmes",
-            downloadLink: "#",
-            iconLink: "https://play-lh.googleusercontent.com/WfwkqIpdZz3ABcDVYWY0VPh1YYHGVeezWAEXoQgO-BRRXd7lgu8OwvCwHCAaZnWcFA",
-            videoLink: ""
+            downloadLink: "https://d.apkpure.net/b/APK/com.cineflixplayv2?version=latest",
+            iconLink: "https://image.winudf.com/v2/image1/Y29tLmNpbmVmbGl4cGxheXYyX2ljb25fMTY1MjU3NzYyNF8wMjk/icon.webp?w=140&fakeurl=1&type=.webp",
+            videoLink: "https://image.winudf.com/v2/image1/Y29tLmNpbmVmbGl4cGxheXYyX3NjcmVlbl8wXzE2NTI1Nzc2MjRfMDA3/screen-0.webp?h=200&fakeurl=1&type=.webp"
         },
         
     ];
@@ -307,6 +317,9 @@
         fullscreenCompany.textContent = item.company;
         fullscreenIcon.src = item.iconLink;
 
+        // Armazena o URL de download do aplicativo
+        fullscreenContent.dataset.downloadLink = item.downloadLink;
+
         if (item.videoLink) {
             trailerVideo.src = item.videoLink;
             document.getElementById("trailer-container").style.display = "block";
@@ -327,7 +340,15 @@
 
     // Função para simular o download do aplicativo ou jogo
     function downloadApp() {
-        alert("Download initiated.");
+        const fullscreenContent = document.getElementById("fullscreen-content");
+        const downloadLink = fullscreenContent.dataset.downloadLink;
+    
+        if (downloadLink) {
+            // Simula o download (pode ser substituído por lógica real de download)
+            window.location.href = downloadLink;
+        } else {
+            alert("Download link not available.");
+        }
     }
 
     // Função para filtrar aplicativos e jogos com base na pesquisa
@@ -344,11 +365,13 @@
         renderizarApps(recomendadosFiltrados, document.getElementById("Recomendados")); // Correção aqui
     }
 
+
+    criarCategoria("Recomendados", "Recomendados", Recomendados);
     // Renderizar as categorias iniciais
     criarCategoria("aplicativos", "Aplicativos", aplicativos);
     criarCategoria("jogos", "Jogos", jogos);
     criarCategoria("filmes", "Filmes", filmes);
-    criarCategoria("Recomendados", "Recomendados", Recomendados);
+ 
     
     // Adicionar evento de pesquisa à barra de pesquisa
     document.querySelector(".search-input").addEventListener("input", pesquisar);
